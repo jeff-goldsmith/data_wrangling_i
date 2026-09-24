@@ -162,5 +162,44 @@ pups_df =
 ```
 
 
+sometime the first thing isn't a dataframe
+
+```{r}
+litters_df |> 
+  filter(group %in% c("con7", "con8")) |> 
+  lm(gd18_weight ~ gd0_weight, data = _)
+```
+
+
+
+`select` vs `pull`
+
+```{r}
+litters_df |> 
+  select(group)
+
+litters_df |> 
+  filter(group %in% c("con7", "con8")) |> 
+  pull(group)
+```
+
+never do `$`
+
+```{r}
+litters_df$group
+```
+
+
+pipes and viewing
+
+```{r}
+litters_df |> 
+  filter(group %in% c("con7", "con8"))
+```
+
+
+
+
+
 
 
